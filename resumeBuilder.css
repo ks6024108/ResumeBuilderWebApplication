@@ -1,28 +1,34 @@
 /* header styles start */
-
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 *{
 margin: 0;
 padding: 0;
-background-color: silver;
+background-color:snow;
 box-sizing: border-box;
 text-decoration: none;
+/* background-color: silver; */
 }
 
 .logo{
     padding:8px;
-    color: #AE445A;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #006b66;
+    font-size: 50px;
+    font-family: 'satisfy';
     font-weight: 500;
+}
+
+.line:hover {
+  cursor: pointer;
 }
 
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 90px;
     width: 100%;
     padding: 0 80px;
+    box-shadow: 3px 3px 10px lightslategray;
 }
 
 .nav-bar li{
@@ -34,17 +40,68 @@ header{
 }
 .nav-bar ul li a{
     display: block;
-    color: #AE445A;
+    color: #0f9690;
     font-size: 20px;
     padding: 10px 25px;
     border-radius: 50px;
     transition: 0.2s;
     margin: 0 5px;
 }
+.nav-bar ul li a:hover {
+    color: #006863;
+    text-decoration: underline;
+}
 
 /* header styler ends */
+.slider-section {
+  padding: 2rem;
+}
 
-/* personal details css starts */
+.slider-wrapper {
+  position: relative;
+  max-width: 35rem;
+  margin: 0 auto;
+  margin-left: 80px;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 6/9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+  border-radius: 0.5rem;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
 
 .container {
     max-width: 800px;
@@ -69,6 +126,7 @@ header{
   input[type="text"],
   input[type="email"],
   input[type="tel"],
+  input[type="date"],
   textarea {
     width: 100%;
     padding: 10px;
@@ -86,8 +144,24 @@ header{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 5px;
   }
-  
+  .button {
+    display: block;
+    width: 10%;
+    padding: 10px;
+    background-color: #006863;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 610px;
+    position: absolute;
+  }
+  .button:hover {
+    background-color: #0f9690;
+  }
   #preview {
     display:none;
   }
@@ -98,3 +172,121 @@ header{
     border-radius: 5px;
   }
   
+/* about us page css */
+
+.about{
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 10px 0; */
+}
+
+.about-us{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-div {
+  flex-basis: 31%;
+  /* background: silver; */
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.about-heading-features{
+  color: #111;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+ /* accordian css starts */
+
+ .ResuDesc{
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .container1 {
+  margin: 15px;
+}
+input[type="radio"] {
+  display: none;
+}
+.container1 {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  color: white;
+  background: #0076ff;
+  z-index: 2; /* put it above the accordion content */
+}
+.accordion:last-child > label, .accordion:last-child > .accordion-content {
+  border: none;
+}
+.accordion-content {
+  border-bottom: 1px solid black;
+  padding: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  z-index: -1;
+  transition: 0.3s linear;
+  font-weight: 300px;
+}
+input:checked ~ .accordion-content {
+  padding: 15px;
+  opacity: 1;
+  max-height: 500px;
+  z-index:1;
+}
+
+/* accordian css ends */
+
+
+
+ /* footer section css */
+
+ footer {
+  color: #fff;
+  background: #333;
+  position: relative; /* required to position the copyright at the bottom */
+  font-size: 80%;
+}
+.footer-copyright {
+  width: 100%;
+  height: 40px;
+  background: #111;
+  /* positions the copyright at the bottom of the footer */
+  padding: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+/* designing preview form section style */
+#form-style{
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 500px;
+text-decoration: underline;
+padding: 5px;
+}
+.styles-form{
+font-size: normal;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: 300px;
+padding: 10px;
+}
