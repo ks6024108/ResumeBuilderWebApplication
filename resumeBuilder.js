@@ -7,11 +7,18 @@ function generateResume() {
   const form = document.getElementById('resumeForm');
   const preview = document.getElementById('previewContent');
 
+  let file=document.getElementById('img-field').files[0];
+  let reader=new FileReader()
+  reader.readAsDataURL(file)
+
+  reader.onloadend=function(){
+  document.getElementById('set-image').src=reader.result;
+  }
+
   preview.innerHTML = `
+   <img src="" id="set-image" class="image-set">
     <h3 id="form-style">${form.fullName.value}</h3>
-    <p class="styles-form">Email: ${form.email.value}</p>
-    <p class="styles-form">Phone: ${form.phone.value}</p>
-    <p class="styles-form">Address: ${form.address.value}</p>
+    <p class="styles-form">${form.email.value} ${form.phone.value}<br>${form.address.value}</p>
     <h3 id="form-style">Education</h3>
     <p class="styles-form">Degree:${form.educationTitle.value}</p>
     <p class="styles-form">Instotution:${form.educationInstitution.value}</p>
@@ -41,5 +48,26 @@ function download() {
 }
 
 
+// comment
+{/* <h3 id="form-style">${form.fullName.value}</h3> */}
 
 
+
+// preview.innerHTML = `
+//   <img src="" id="set-image" class="image-set">
+//     <p class="styles-form">Email: ${form.email.value}</p>
+//     <p class="styles-form">Phone: ${form.phone.value}</p>
+//     <p class="styles-form">Address: ${form.address.value}</p>
+//     <h3 id="form-style">Education</h3>
+//     <p class="styles-form">Degree:${form.educationTitle.value}</p>
+//     <p class="styles-form">Instotution:${form.educationInstitution.value}</p>
+//     <p class="styles-form">Completion Date:${form.educationDate.value}</p>
+//     <h3 id="form-style">Work Experience</h3>
+//     <p class="styles-form">Work Title:${form.workTitle.value}</p>
+//     <p class="styles-form">Company:${form.workCompany.value}</p>
+//     <p class="styles-form">WorkDate:${form.workDate.value}</p>
+//     <p class="styles-form"> Work Description:${form.workDescription.value}</p>
+//     <h3 id="form-style">Skills</h3>
+//     <p class="styles-form">Skills:${form.skill.value}</p>
+//     <!-- Add more fields as needed -->
+//   `;
