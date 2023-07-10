@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="templatesresume.css">
+    <link rel="stylesheet" href="resumeBuilder.css">
+
+</head>
+
+<body>
+    <h1>Form Example</h1>
+    <nav class="nav-bar">
+        <div class="form-container">
+            <ul>
+                <li class="line"><a href="#" onclick="showFormSection('section1'); return false;">Personal
+                        Information</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section2'); return false;">Education</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section3'); return false;">Work Experience</a>
+                </li>
+                <li class="line"><a href="#" onclick="showFormSection('section4'); return false;">InternShips And
+                        Certificates</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section5'); return false;">Social Profile
+                        Links</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section6'); return false;">Projects</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section7'); return false;">Awards</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section8'); return false;">Strength And Weakness</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section9'); return false;">Hobbies</a></li>
+                <li class="line"><a href="#" onclick="showFormSection('section10'); return false;">Skills</a></li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="form-section active" id="section1">
+        <h2>Personal Information</h2>
+        <form>
+            <!-- Form inputs for Section 1 -->
+            <input type="text" name="name" placeholder="Enter Your Name" required><br>
+            <input type="email" name="email" placeholder="Enter Your Email" required><br>
+            <input type="tel" name="mobNo" placeholder="Enter Your Mobile NO." required><br>
+            <input type="date" name="dob" placeholder="Enter your Date Of Birth" required><br>
+            <textarea name="address" placeholder="Enter Your Address" required></textarea><br>
+            Martial Status:<input type="checkbox" name="martialStatus" placeholder="Martial Status" required><br>
+            <input type="text" name="nationality" placeholder="Nationality" required><br>
+        </form>
+    </div>
+
+    <div class="form-section" id="section2">
+        <h2>Education</h2>
+        <form>
+            <!-- Form inputs for Section 2 -->
+            <input type="text" name="tenthMarks" placeholder="Enter 10 th standard Marks In Percentage" required><br>
+            <input type="text" name="twelMarks" placeholder="Enter 12 th standard Marks In Percentage" required><br>
+            <input type="text" name="degreeName" placeholder="Degree Name" required><br>
+            <input type="text" name="nameInstitution" placeholder="Institution Name" required><br>
+            <span class="passing">Passing Date Of Degree:</span><input type="date" name="passingDate" required><br>
+            <span class="passing">Marks Of Degree:</span><input type="date" name="aggregateMarks" required><br>
+        </form>
+    </div>
+
+    <div class="form-section" id="section3">
+        <h2>Work Experience</h2>
+        <form>
+            <!-- Form inputs for Section 3 -->
+            <input type="text" name="workTitle" placeholder="Job Title" required>
+            <input type="text" name="workCompany" placeholder="Company" required>
+            <span class="jobJoin">Starting Date:</span><input type="date" name="JoiningDate" required><br>
+            <span class="jobJoin">Leaving Date:</span><input type="date" name="resignDate" required><br>
+            <input type="text" name="workTitle" placeholder="Job Title" required>
+            <textarea name="workDescription" placeholder="Job Description" required></textarea>
+        </form>
+    </div>
+
+
+    <div class="form-section" id="section4">
+        <h2>InternShips And Certificates</h2>
+        <form>
+            <!-- Form inputs for Section 4 -->
+            <input type="text" name="internshipFieldName" placeholder="InternShip Field Name" required><br>
+            <input type="text" name="orgName" placeholder="Company or Organization Name Where you done this Internship"
+                required><br>
+            <input type="text" name="inte-paid" placeholder="Free Or Paid??" required>
+            <span class="internDate">Starting Date:</span><input type="date" name="passingDate" required><br>
+            <span class="internDate">Finishing Date:</span><input type="date" name="aggregateMarks" required><br>
+        </form>
+    </div>
+
+    <div class="form-section" id="section5">
+        <h2>Social Profile Links</h2>
+        <form>
+            <!-- Form inputs for Section 5 -->
+            <input type="text" name="linkedinUrl" placeholder="Enter Your linkedin Url" required>
+            <input type="text" name="instaUrl" placeholder="Enter Your Instagram Url" required>
+            <input type="text" name="facebookUrl" placeholder="Enter Your Facebook Url" required>
+            <input type="text" name="githubUrl" placeholder="Enter Your GitHub Repository Url" required>
+        </form>
+    </div>
+
+    <div class="form-section" id="section6">
+        <h2>Projects</h2>
+        <form>
+            <!-- Form inputs for Section 6 -->
+            <input type="text" name="projects[]" placeholder="Enter Your Project names" required>
+
+        </form>
+    </div>
+
+    <div class="form-section" id="section7">
+        <h2>Awards</h2>
+        <form>
+            <!-- Form inputs for Section 7 -->
+            <input type="text" name="awards[]" placeholder="Awards that you Won names" required>
+
+        </form>
+    </div>
+
+    <div class="form-section" id="section8">
+        <h2>Strength And Weakness</h2>
+        <form>
+            <!-- Form inputs for Section 8 -->
+            <input type="text" name="strAndWeak[]" placeholder="Add your Strengths and Weaknesses" required>
+
+        </form>
+    </div>
+
+    <div class="form-section" id="section9">
+        <h2>Hobbies</h2>
+        <form>
+            <!-- Form inputs for Section 9 -->
+            <input type="text" name="hobbies[]" placeholder="Add your Hobbies" required>
+
+        </form>
+    </div>
+
+    <div class="form-section" id="section10">
+        <h2>Skills</h2>
+        <form>
+            <!-- Form inputs for Section 10 -->
+            <input type="text" name="skills[]" placeholder="What Skills Do You Have?" required>
+        </form>
+    </div>
+    <div class="form-buttons">
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <div id="form-data-display"></div>
+
+    <script src="templatesresume.js"></script>
+</body>
+
+</html>
